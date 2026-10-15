@@ -1,6 +1,8 @@
 # CounselReflect Chrome Extension
 
-A Chrome extension that brings mental health conversation analytics to AI platforms. Analyze therapeutic conversations from Gemini, ChatGPT, and Claude with AI-powered metrics.
+The browser interface for CounselReflect, an LLM evaluation platform. Extract conversations from Gemini, ChatGPT, and Claude and inspect automated evaluation results in a sidebar. Scores do not establish clinical effectiveness or safety for use in care.
+
+See the [product overview](../README.md) for dashboard and extension screenshots, architecture, and saved evaluation evidence.
 
 ## ✨ Features
 
@@ -136,7 +138,7 @@ Add support for new platforms by:
 - **Content Script**: Injects sidebar and manages page scraping
 - **Background Script**: Handles extension icon clicks
 - **Sidebar**: React app running in an iframe
-- **Communication**: Uses `window.postMessage` for iframe ↔ content script
+- **Communication**: Uses Chrome runtime messaging between the sidebar, background worker, and content script
 
 ### Platform Scraping
 

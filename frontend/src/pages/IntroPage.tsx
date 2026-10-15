@@ -72,8 +72,8 @@ const FALLBACK_REFERENCES: MetricReference[] = [
 ];
 
 const WORKFLOW = [
-  ['01', 'Provide a transcript', 'Upload a de-identified counseling transcript.'],
-  ['02', 'Select evaluation criteria', 'Select established measures or define custom rubrics.'],
+  ['01', 'Provide a transcript', 'Provide a de-identified LLM conversation.'],
+  ['02', 'Select evaluation criteria', 'Select predefined evaluators or define custom rubrics.'],
   ['03', 'Review supporting evidence', 'Examine each finding alongside the relevant transcript turns.']
 ];
 
@@ -276,13 +276,14 @@ export const IntroPage: React.FC = () => {
           <h1 className="cr-page-title text-[38px] text-[var(--cr-ink)]">CounselReflect</h1>
           <div className="relative mt-5 max-w-[620px] pb-2">
             <p className="text-[24px] font-medium leading-[1.35] text-[#2468cf] sm:text-[27px]">
-              Review counseling conversations with traceable evidence.
+              Evaluate LLM conversations with traceable evidence.
             </p>
             <PencilUnderline className="absolute -bottom-0.5 left-0 h-3 w-[92%] text-[#2468cf]" />
           </div>
           <p className="mt-4 max-w-[620px] text-[16px] leading-7 text-[var(--cr-ink-2)] sm:text-[17px]">
-            Upload a de-identified transcript, select evaluation criteria, and review each finding
-            alongside the transcript turns that informed it.
+            An LLM evaluation platform for counseling-style and emotional-support dialogue.
+            Select evaluation criteria and inspect scores alongside the transcript turns that informed them.
+            Automated scores do not establish clinical effectiveness or safety for use in care.
           </p>
 
           <button

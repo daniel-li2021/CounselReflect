@@ -1,23 +1,17 @@
 # CounselReflect Frontend
 
-A modern React + TypeScript web application for analyzing therapeutic conversations using AI-powered evaluation metrics. CounselReflect provides therapists and researchers with tools to assess conversation quality across multiple dimensions including empathy, therapeutic techniques, safety, and adherence to clinical guidelines.
+The React + TypeScript dashboard for CounselReflect, an LLM evaluation platform focused on counseling-style and emotional-support dialogue. Inspect automated scores and available rationales alongside transcript turns. Results support evaluation research and human review; they do not establish clinical effectiveness or safety for use in care.
 
-## Overview
-
-CounselReflect is the web interface of CounselReflect. It connects to a FastAPI backend to evaluate mental health conversations using three powerful evaluation approaches:
-
-1. **Predefined Metrics**: Pre-trained ML models for specific therapeutic metrics
-2. **Literature-Based Benchmarks**: Research-backed rubrics evaluated by GPT-4
-3. **Customized Metrics**: AI-assisted custom metric creation and refinement
+The dashboard connects to FastAPI for predefined evaluators, literature-derived rubrics, and custom evaluation profiles. See the root [product overview](../README.md) for screenshots, architecture, and evaluation evidence with limitations.
 
 ## Features
 
 ### Core Features
 - **Conversation Input**: Paste or type therapeutic conversations with role-based formatting
-- **Multi-Modal Evaluation**: Choose from 70+ pre-trained and literature-based metrics
+- **Evaluation Selection**: Choose from available predefined evaluators and literature-derived rubrics
 - **Custom Metric Builder**: Create and refine custom evaluation criteria using OpenAI
 - **Interactive Dashboard**: Visualize results with charts, tables, and detailed rationales
-- **API Key Management**: Secure local storage of API keys with validation
+- **API Key Management**: Provider key configuration and validation; storage behavior depends on user settings and deployment
 
 ### Advanced Features
 - **Literature Highlighting**: Highlight text from original conversations based on metric scores
@@ -72,7 +66,7 @@ frontend/
    VITE_API_BASE_URL=http://localhost:8000
    ```
    
-   **Note**: API keys are managed through the UI and stored in localStorage, not in environment variables.
+   **Note**: API keys are managed through the UI and stored according to the selected persistence setting, not in Vite environment variables.
 
 ## Running the Application
 
@@ -100,7 +94,7 @@ Build output will be in the `dist/` directory.
 2. Optionally add HuggingFace API key for additional models
 3. Click "Verify API Keys" to validate
 
-Keys are stored securely in your browser's localStorage.
+Browser-provided keys use session storage by default; saving keys across sessions requires an explicit opt-in. Server-managed deployments can keep provider keys out of the browser. Browser storage is not a credential vault.
 
 ### Step 2: Input Conversation
 
@@ -114,14 +108,14 @@ Choose one of three input methods:
 Select from three evaluation modes:
 
 #### A. Predefined Metrics
-Choose from 10 pre-trained ML models:
+Choose from available predefined evaluators:
 - **Empathy**: ER (Emotional Reaction), IP (Interpretation), EX (Exploration)
 - **Safety**: Toxicity detection, Fact scoring
 - **Communication**: Talk Type, Active Listening, PAIR reflection scoring
 - **Emotion**: Emotion analysis, Emotional support strategies
 
 #### B. Literature Benchmarks
-Access 69 research-backed metrics from therapeutic literature:
+Choose available literature-derived rubrics. Example criteria include:
 - Clinical information accuracy
 - Therapeutic guideline adherence
 - Crisis safety protocols

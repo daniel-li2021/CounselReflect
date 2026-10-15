@@ -42,7 +42,7 @@ logging.getLogger("openai").setLevel(logging.WARNING)
 # Create FastAPI app
 app = FastAPI(
     title="CounselReflect API",
-    description="API for evaluating therapist-patient conversations",
+    description="LLM conversation evaluation API for predefined evaluators, literature-derived rubrics, and custom criteria",
     version="0.1.0"
 )
 

@@ -1,6 +1,6 @@
 # CounselReflect API
 
-FastAPI backend for the CounselReflect Chrome extension and web dashboard. This API provides comprehensive endpoints for evaluating and analyzing therapist-patient conversations using pre-trained models, literature-based rubrics, and custom AI-powered metrics.
+FastAPI backend for the CounselReflect LLM evaluation platform, used by the web dashboard, Chrome extension, and batch CLI. It evaluates conversational outputs through predefined models, literature-derived rubrics, and custom criteria. Automated scores do not establish clinical effectiveness or safety for use in care. See the [product overview](../README.md) for architecture, screenshots, and saved evaluation evidence.
 
 ## Overview
 
